@@ -1,34 +1,62 @@
-.body {
-  background: lightblue;
-  text-align: center;
-}
+/*// BASE STYLES //*/
 
-.wrapper {
+html,
+body {
+  height: 100%;
   width: 100%;
-  padding: 20px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass,
+.sky,
+.road {
+  position: relative;
+}
+
+.sky {
+  height: 40%;
+  background: skyblue;
+}
+
+.grass {
+  height: 30%;
+  background: seagreen;
+}
+
+.road {
+  height: 30%;
+  background: dimgrey;
   box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
 }
 
-/* finns bara en img just nu */
-/* 200px är positiv, då går den till höger -200px då går den till vänster */
-/* transform: translateX(200px, 200px); */
-/* transform: scaleX(); Detta förstorar */
-img {
+.lines {
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
 }
 
-.circle {
-  width: 100px;
-  padding: 50px 0;
-  line-height: 0;
-  margin: 60px auto;
-  background: pink;
-  color: white;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background 1s, transform 1s 1s linear;
+/*// ELEMENTS TO ANIMATE //*/
+.mario {
+  position: absolute;
+  top: -40;
+  left: 0px;
+  animation-name: drive;
+  animation-duration: 3s;
 }
+/*// KEYFRAMES //*/
 
-.circle:hover {
-  background: salmon;
-  transform: rotate(360deg);
+@keyframes drive {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(500px);
+  }
 }
