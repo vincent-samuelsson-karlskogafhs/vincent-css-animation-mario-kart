@@ -52,7 +52,37 @@ body {
   animation-fill-mode: both;
   animation-delay: 1s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
+
+.luigi {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  animation-name: drive;
+  animation-duration: 3.2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top: 0;
+  animation: wind 50s linear infinite reverse;
+}
+
 /*// KEYFRAMES //*/
 
 @keyframes drive {
@@ -61,5 +91,14 @@ body {
   }
   to {
     transform: translateX(1100px);
+  }
+}
+
+@keyframes wind {
+  from {
+    left: 300px;
+  }
+  to {
+    left: 100%;
   }
 }
